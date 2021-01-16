@@ -10,6 +10,6 @@ client.on("ready", () => {
   console.log("Working")
   client.user.setActivity({
     type: "LISTENING",
-    name: ":help"
+    name: "SOON"
 });
 });
