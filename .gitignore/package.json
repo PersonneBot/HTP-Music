@@ -1,0 +1,16 @@
+{
+  "name": "htp_music",
+  "version": "1.0.0",
+  "description": "Bot dicord de musique.",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "ytdl-core": "^4.4.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Volpy",
+  "license": "ISC"
+}
