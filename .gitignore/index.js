@@ -12,7 +12,7 @@ client.registry
   .registerGroup('music', "Music")
   .registerCommandsIn(path.join(__dirname, 'commands'));
 
-client.login("Nzk5OTM0ODI0MzI4MzMxMjc0.YAKzXA.mbDyw2WdRuhZlOM8p7tV7KWPlTI");
+client.login(process.env.TOKEN);
 
 
 //on ready
