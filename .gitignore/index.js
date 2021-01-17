@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
+const ytdl = require("ytdl-core");
 var prefix = ":";
 client.login(process.env.TOKEN);
 const fs = require('fs');
@@ -13,3 +14,11 @@ client.on("ready", () => {
     name: "SOON"
 });
 });
+
+client.on("message", message => {
+  if(message.content.indexOf(prefix + "play")){
+    if(message.member.voice){
+      message.channel.send("right");
+    }
+  }
+})
