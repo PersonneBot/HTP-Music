@@ -1,7 +1,7 @@
 const { CommandoClient } = require("discord.js-commando");
 const path = require('path');
 const client = new CommandoClient({
-  commandPrefix: "-",
+  commandPrefix: "!",
   owner: "554728734792482827",
   invite: "https://discord.gg/vgyfURnSVw"
 });
@@ -13,7 +13,6 @@ client.registry
   .registerCommandsIn(path.join(__dirname, 'commands'));
 
 client.login(process.env.TOKEN);
-
 
 //on ready
 client.on("ready", () => {
