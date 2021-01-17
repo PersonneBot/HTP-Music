@@ -1,33 +1,27 @@
-const Discord = require("discord.js");
-const client = new Discord.Client();
-const ytdl = require("ytdl-core");
-var prefix = "!";
-client.login(process.env.TOKEN);
-const fs = require('fs');
+const { CommandoClient } = require("discord.js-commando");
+const path = require('path');
+const client = new CommandoClient({
+  commandPrefix: "!",
+  owner: "554728734792482827",
+  invite: "https://discord.gg/DnxrKxRchZ"
+});
+client.registry
+  .registerDefaultTypes()
+  .registerDefaultGroups()
+  .registerDefaultCommands()
+  .registerGroup('music', "Music")
+  .registerCommandsIn(path.join(__dirname, 'commands'));
+
+client.login("Nzk5OTM0ODI0MzI4MzMxMjc0.YAKzXA.mbDyw2WdRuhZlOM8p7tV7KWPlTI");
 
 
 //on ready
 client.on("ready", () => {
-  console.log("Working")
+  console.log(`Connecté en tant que ${client.user.tag} - (${client.user.id})`);
   client.user.setActivity({
     type: "LISTENING",
     name: "SOON"
 });
 });
 
-client.on("message", message => {
-  if(message.content.indexOf(prefix + "play") == 0){
-    if(message.member.voice){
-      message.channel.send("right");
-    }
-  }
-});
-
-
-//commande hello                                                          nice v12
-client.on("message", message =>{
-  if(!message.guild) return
-  if(message.content.indexOf(prefix + "hello") == 0){
-    message.channel.send("Bonjour " + message.author.username + "!")
-  }
-});
+client.on('error', console.error);

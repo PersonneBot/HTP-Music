@@ -4,8 +4,11 @@
   "description": "Bot dicord de musique.",
   "main": "index.js",
   "dependencies": {
+    "@discordjs/opus": "github:discordjs/opus",
     "discord.js": "^12.5.1",
-    "ytdl-core": "^4.4.3"
+    "discord.js-commando": "github:discordjs/Commando",
+    "ytdl-core": "^4.4.3",
+    "ytdl-core-discord": "^1.2.5"
   },
   "devDependencies": {},
   "scripts": {
