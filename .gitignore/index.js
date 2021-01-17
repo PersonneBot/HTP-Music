@@ -16,9 +16,18 @@ client.on("ready", () => {
 });
 
 client.on("message", message => {
-  if(message.content.indexOf(prefix + "play")){
+  if(message.content.indexOf(prefix + "play") == 0){
     if(message.member.voice){
       message.channel.send("right");
     }
   }
-})
+});
+
+
+//commande hello                                                          nice v12
+client.on("message", message =>{
+  if(!message.guild) return
+  if(message.content.indexOf(prefix + "hello") == 0){
+    message.channel.send("Bonjour " + message.author.username + "!")
+  }
+});
